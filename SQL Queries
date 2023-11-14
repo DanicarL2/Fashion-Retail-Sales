@@ -29,7 +29,7 @@ LIMIT 7
 
 
 
-**Most Popular by Season**
+**Popularity by Season**
 SELECT
     CASE
         WHEN month IN ('December', 'January', 'February') THEN 'Winter'
@@ -41,21 +41,6 @@ SELECT
 FROM Sales
 GROUP BY Season 
 ORDER BY total_purchased DESC
-
-
-
-**Least Popular by Season**
-SELECT
-    CASE
-        WHEN month IN ('December', 'January', 'February') THEN 'Winter'
-        WHEN month IN ('March', 'April', 'May') THEN 'Spring'
-        WHEN month IN ('June', 'July', 'August') THEN 'Summer'
-        WHEN month IN ('September', 'October', 'November') THEN 'Fall'
-    END AS Season,
-    COUNT(item_purchased) AS total_purchased
-FROM Sales
-GROUP BY Season 
-ORDER BY total_purchased ASC
 
 
 
